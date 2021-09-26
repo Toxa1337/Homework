@@ -6,26 +6,43 @@ public class MovableCircle implements Movable {
     private MovablePoint center;
 
     public MovableCircle(int x, int y, int xSpeed, int ySpeed, int radius){
+        center = new MovablePoint(x,y,xSpeed,ySpeed);
         this.radius=radius;
     }
 
     @Override
-    public void moveUp() {
-
+    public void moveUp(int ySpeed) {
+        if (ySpeed>0){
+            center.ySpeed=ySpeed;
+        }else{
+            moveDown(ySpeed);
+        }
     }
 
     @Override
-    public void moveDown() {
-
+    public void moveDown(int ySpeed) {
+        if (ySpeed<0){
+            center.ySpeed=ySpeed;
+        }else{
+            moveUp(ySpeed);
+        }
     }
 
     @Override
-    public void moveLeft() {
-
+    public void moveLeft(int xSpeed) {
+        if (xSpeed<0){
+            center.xSpeed=xSpeed;
+        }else{
+            moveRight(xSpeed);
+        }
     }
 
     @Override
-    public void moveRight() {
-
+    public void moveRight(int xSpeed) {
+        if (xSpeed>0){
+            center.xSpeed=xSpeed;
+        }else{
+            moveLeft(xSpeed);
+        }
     }
 }

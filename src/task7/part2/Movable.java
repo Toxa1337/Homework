@@ -1,8 +1,8 @@
 package task7.part2;
 
 public interface Movable {
-    public void moveUp();
-    public void moveDown();
-    public void moveLeft();
-    public void moveRight();
+    public void moveUp(int ySpeed);
+    public void moveDown(int ySpeed);
+    public void moveLeft(int xSpeed);
+    public void moveRight(int xSpeed);
 }
