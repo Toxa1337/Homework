@@ -11,6 +11,14 @@ public class MovableCircle implements Movable {
     }
 
     @Override
+    public String toString() {
+        return "MovableCircle{" +
+                "radius=" + radius +
+                ", center=" + center +
+                '}';
+    }
+
+    @Override
     public void moveUp() { center.moveUp(); }
 
     @Override
