@@ -11,38 +11,23 @@ public class MovableCircle implements Movable {
     }
 
     @Override
-    public void moveUp(int ySpeed) {
-        if (ySpeed>0){
-            center.ySpeed=ySpeed;
-        }else{
-            moveDown(ySpeed);
-        }
+    public void moveUp() {
+        center.y=center.y+center.ySpeed;
     }
 
     @Override
-    public void moveDown(int ySpeed) {
-        if (ySpeed<0){
-            center.ySpeed=ySpeed;
-        }else{
-            moveUp(ySpeed);
-        }
+    public void moveDown() {
+        center.y=center.y-center.ySpeed;
     }
 
     @Override
-    public void moveLeft(int xSpeed) {
-        if (xSpeed<0){
-            center.xSpeed=xSpeed;
-        }else{
-            moveRight(xSpeed);
-        }
+    public void moveLeft() {
+        center.x=center.x-center.xSpeed;
     }
 
     @Override
-    public void moveRight(int xSpeed) {
-        if (xSpeed>0){
-            center.xSpeed=xSpeed;
-        }else{
-            moveLeft(xSpeed);
-        }
+    public void moveRight() {
+        center.x=center.x+center.xSpeed;
     }
+
 }

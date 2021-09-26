@@ -14,38 +14,23 @@ public class MovablePoint implements Movable {
     }
 
     @Override
-    public void moveUp(int ySpeed) {
-    if (ySpeed>0){
-        this.ySpeed=ySpeed;
-    }else{
-        moveDown(ySpeed);
-    }
+    public void moveUp() {
+    y=y+ySpeed;
     }
 
     @Override
-    public void moveDown(int ySpeed) {
-        if (ySpeed<0){
-            this.ySpeed=ySpeed;
-        }else{
-            moveUp(ySpeed);
-        }
+    public void moveDown() {
+    y=y-ySpeed;
     }
 
     @Override
-    public void moveLeft(int xSpeed) {
-        if (xSpeed<0){
-            this.xSpeed=xSpeed;
-        }else{
-            moveRight(xSpeed);
-        }
+    public void moveLeft() {
+    x=x-xSpeed;
     }
 
     @Override
-    public void moveRight(int xSpeed) {
-        if (xSpeed>0){
-            this.xSpeed=xSpeed;
-        }else{
-            moveLeft(xSpeed);
-        }
+    public void moveRight() {
+    x=x+xSpeed;
     }
+
 }
