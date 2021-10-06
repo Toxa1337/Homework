@@ -8,4 +8,4 @@ public class var3 {
         JFrame window = new JFrame("AnimationFrame");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //программа закончит работу при закрытии окна
         window.setSize(300, 300);
-    }
+    }}

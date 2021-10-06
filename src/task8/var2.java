@@ -12,7 +12,7 @@ public class var2 {
         }
 
         JFrame window = new JFrame("ImageWindow");
-        ImageIcon img = new ImageIcon("C:\\Users\\Антон\\Desktop\\f3fa7ec72c62ecf057ef73f3d1dc0146.gif");//сюда нужно поместить путь к файлу
+        ImageIcon img = new ImageIcon("C:\\Users\\Антон\\Desktop\\Siba-Inu-smile.jpg");//сюда нужно поместить путь к файлу
         JLabel label = new JLabel(img);
         window.add(label);
 
