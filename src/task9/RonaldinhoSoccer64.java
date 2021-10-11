@@ -1,13 +1,9 @@
 package task9;
 
-
-
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
 
 public class RonaldinhoSoccer64 extends JFrame {
 
@@ -105,17 +101,5 @@ public class RonaldinhoSoccer64 extends JFrame {
     }
     public RonaldinhoSoccer64() {
         super("HA-HA-HA-HA-HA-HA-HA-RonaldinhoSoccer64");
-    }
-}
-class Button1Action extends RonaldinhoSoccer64 implements ActionListener {
-    public void actionPerformed(ActionEvent e) {
-
-        n1+=1;
-
-    }
-}
-class Button2Action extends RonaldinhoSoccer64 implements ActionListener {
-    public void actionPerformed(ActionEvent e) {
-        n2+=1;
     }
 }
