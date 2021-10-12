@@ -43,7 +43,7 @@ public class var1 extends JFrame {
         textField.setFont(new Font("Dialog", Font.PLAIN, 14));
         textField.setHorizontalAlignment(JTextField.CENTER);
         textField.setBounds((window.getWidth()/2)-100,215,200,55);
-        textField.addActionListener(new ActionListener() {
+        textField.addActionListener(new TextAction("") {
             @Override
             public void actionPerformed(ActionEvent e) {
                 window.guess = Integer.valueOf(textField.getText());
