@@ -20,7 +20,10 @@ import java.util.Random;
 
 public class var1 extends JFrame {
 
-    private int number, guess, tr=3;
+    Random random = new Random();
+
+
+    private int number=random.nextInt(21), guess, tr=3;
 
     public int compare(){
         if(number>guess){

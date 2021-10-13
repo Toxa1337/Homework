@@ -131,16 +131,6 @@ public class var3 extends JFrame {
         this.t=t;
     }
 
-    public JFrame window(){
-        JFrame window = new JFrame("Text");
-        window.setSize(1000, 800);
-        window.setLocation(20,10);
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //завершить работу программу при закрытии окна
-        window.setLayout(null);
-        window.setVisible(true);
-        return (window);
-    }
-
     public static void main(String[] args) {
 
         var3 x = new var3();
