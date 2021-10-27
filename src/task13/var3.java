@@ -1,10 +1,33 @@
 package task13;
 
+import java.util.ArrayList;
+
 import static java.lang.System.exit;
 
 public class var3 {
 
-    public class MyArrayList <T>{
+    public static class Cat{
+        String name;
+        public Cat(String name){
+            this.name=name;
+        }
+
+        @Override
+        public String toString() {
+            return name;
+        }
+    }
+    public static void output(ArrayList<var1.Cat> c)
+    {
+        for(int i = 0; i < c.size(); i++)
+        {
+            System.out.println(c.get(i).toString());
+        }
+        System.out.println("\n");
+    }
+
+
+    public static class arrayList <T>{
         private final int SIZE = 64;   //базовый размер
         private Object[] array = new Object[SIZE]; //массив для объектов классов
         private int itemPointer = 0;   //размер списка
