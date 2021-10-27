@@ -16,105 +16,54 @@ package task11;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class var2 {
-    private JLabel t;
-    private JFrame window;
+public class var2 extends JFrame {
 
-    public void field(){
+    JLabel[] jLabels = {
+            new JLabel("Добро пожаловать в Центр"),
+            new JLabel("Добро пожаловать на Север"),
+            new JLabel("Добро пожаловать на Юг"),
+            new JLabel("Добро пожаловать на Запад"),
+            new JLabel("Добро пожаловать на Восток"),
+    };
+    JPanel[] jPanels = { new JPanel(), new JPanel(), new JPanel(), new JPanel(), new JPanel(),};
 
-        JLabel center = new JLabel();
-        center.setBounds(window.getWidth()/4,window.getHeight()+55/4,100,100);
-        center.setBackground(Color.decode("#00FF00"));
-        center.setOpaque(true);
+    public var2() {
+        super("Appobozik - 11.2");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        setLocation(500, 100);
+        setLayout(new BorderLayout());
 
-
-        JLabel east = new JLabel();
-        east.setBounds(window.getWidth()-15,70,15,window.getHeight()-70);
-        east.setBackground(Color.decode("#FF5511"));
-        east.setOpaque(true);
-
-        JLabel west = new JLabel();
-        west.setBounds(0,70,15,window.getHeight()-70);
-        west.setBackground(Color.decode("#FF0000"));
-        west.setOpaque(true);
-
-        JLabel north = new JLabel();
-        north.setBounds(15,55,window.getWidth()-15,15);
-        north.setBackground(Color.decode("#00FFFF"));
-        north.setOpaque(true);
-
-        JLabel south = new JLabel();
-        south.setBounds(15,window.getHeight()-15,window.getWidth()-15,15);
-        south.setBackground(Color.decode("#FFFF00"));
-        south.setOpaque(true);
-
-        window.add(center);
-        window.add(north);
-        window.add(south);
-        window.add(west);
-        window.add(east);
+        add(jPanels[0], BorderLayout.CENTER);
+        add(jPanels[1], BorderLayout.NORTH);
+        add(jPanels[2], BorderLayout.SOUTH);
+        add(jPanels[3], BorderLayout.WEST);
+        add(jPanels[4], BorderLayout.EAST);
+        for (int i = 0; i < jPanels.length; i++) {
+            jLabels[i].setVisible(false);
+            jPanels[i].add(jLabels[i]);
+            int finalI = i;
+            jPanels[i].addMouseListener(new MouseListener() {
+                @Override public void mouseClicked(MouseEvent e) {}
+                @Override public void mousePressed(MouseEvent e) {}
+                @Override public void mouseReleased(MouseEvent e) {}
+                @Override
+                public void mouseEntered(MouseEvent e) {
+                    jLabels[finalI].setVisible(true);
+                }
+                @Override
+                public void mouseExited(MouseEvent e) {
+                    jLabels[finalI].setVisible(false);
+                }
+            });
+        }
     }
 
-    public void dialog(JLabel x){
-        t=x;
+    public static void main (String[] args) {
+        new var2();
     }
-    public void window(JFrame x){
-        window=x;
-    }
-
-    public static void main(String[] args) {
-        var2 x = new var2();
-
-        JFrame window = new JFrame("Text");
-
-        window.setSize(1000, 800);
-        window.setLocation(500,0);
-
-        JLabel textField = new JLabel();
-        textField.setBounds(0,0,window.getWidth()-15,55);
-        textField.setBackground(Color.DARK_GRAY);
-        textField.setOpaque(true);
-        x.dialog(textField);
-        window.add(textField);
-
-        JLabel center = new JLabel();
-        center.setBounds(435,340,100,100);
-        center.setBackground(Color.decode("#00FF00"));
-        center.setOpaque(true);
-
-
-
-        JLabel east = new JLabel();
-        east.setBounds(window.getWidth()-30,70,15,window.getHeight()-120);
-        east.setBackground(Color.decode("#FF5511"));
-        east.setOpaque(true);
-
-        JLabel west = new JLabel();
-        west.setBounds(0,70,15,window.getHeight()-120);
-        west.setBackground(Color.decode("#FF0000"));
-        west.setOpaque(true);
-
-        JLabel north = new JLabel();
-        north.setBounds(0,55,window.getWidth()-15,15);
-        north.setBackground(Color.decode("#00FFFF"));
-        north.setOpaque(true);
-
-        JLabel south = new JLabel();
-        south.setBounds(0,window.getHeight()-50,window.getWidth()-15,15);
-        south.setBackground(Color.decode("#FFFF00"));
-        south.setOpaque(true);
-
-        window.add(center);
-        window.add(north);
-        window.add(south);
-        window.add(west);
-        window.add(east);
-
-
-        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //завершить работу программу при закрытии окна
-        window.setLayout(null);
-        window.setVisible(true);
-    }
-
 }
