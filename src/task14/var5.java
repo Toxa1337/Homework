@@ -1,38 +1,42 @@
 package task14;
 
-//Используйте для организации хранения структуру данных Queue. (очередь)
-
 import java.lang.*;
-import java.util.*;
-public class var2 {
-    public static void main(String[] args) {
+import java.util.Scanner;
+import java.util.Stack;
+
+public class var5 {
+    public static void main(String[] args)
+    {
         Scanner scan = new Scanner(System.in);
-        Queue<Integer> fPlayer = new ArrayDeque<>();
-        Queue<Integer> sPlayer = new ArrayDeque<>();
+        Stack<Integer> fPlayer = new Stack<>();
+        Stack<Integer> sPlayer = new Stack<>();
         for (int i = 0; i < 5; i++) {
-            fPlayer.add(scan.nextInt());
+            fPlayer.push(scan.nextInt());
         }
         for (int i = 0; i < 5; i++)
         {
-            sPlayer.add(scan.nextInt());
+            sPlayer.push(scan.nextInt());
         }
         int count = 0;
 
-        while (fPlayer.size() > 0 && sPlayer.size() > 0) {
-            int firstVal = fPlayer.poll();
-            int secondVal = sPlayer.poll();
+        while (!(fPlayer.isEmpty()) && !(sPlayer.isEmpty()))
+        {
+            int firstVal = fPlayer.get(0);
+            int secondVal = sPlayer.get(0);
+            fPlayer.removeElementAt(0);
+            sPlayer.removeElementAt(0);
             switch (firstVal)
             {
                 case 0:
                 {
                     if (secondVal == 9)
                     {
-                        fPlayer.add(firstVal);
-                        fPlayer.add(secondVal);
+                        fPlayer.push(firstVal);
+                        fPlayer.push(secondVal);
                     }
                     else
                     {
-                        sPlayer.add(firstVal);
+                        sPlayer.push(firstVal);
                         sPlayer.add(secondVal);
                     }
                     break;
@@ -41,24 +45,24 @@ public class var2 {
                 {
                     if (secondVal == 0)
                     {
-                        sPlayer.add(firstVal);
-                        sPlayer.add(secondVal);
+                        sPlayer.push(firstVal);
+                        sPlayer.push(secondVal);
                     }
                     else
                     {
-                        fPlayer.add(firstVal);
-                        fPlayer.add(secondVal);
+                        fPlayer.push(firstVal);
+                        fPlayer.push(secondVal);
                     }
                     break;
                 }
                 default:
                 {
                     if (firstVal > secondVal) {
-                        fPlayer.add(firstVal);
-                        fPlayer.add(secondVal);
+                        fPlayer.push(firstVal);
+                        fPlayer.push(secondVal);
                     } else if (secondVal > firstVal) {
-                        sPlayer.add(firstVal);
-                        sPlayer.add(secondVal);
+                        sPlayer.push(firstVal);
+                        sPlayer.push(secondVal);
                     }
                     break;
                 }
@@ -67,14 +71,14 @@ public class var2 {
             count++;
             if (count == 106) {
                 System.out.println("botva");
-                return;
+                break;
             }
         }
 
         if (fPlayer.isEmpty()) {
-            System.out.println("sPlayer " + count);
+            System.out.println("second " + count);
         } else {
-            System.out.println("fPlayer " + count);
+            System.out.println("first " + count);
         }
     }
 }
