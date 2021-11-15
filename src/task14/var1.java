@@ -38,7 +38,7 @@ public class var1 {
                     else
                     {
                         sPlayer.push(firstVal);
-                        sPlayer.add(secondVal);
+                        sPlayer.push(secondVal);
                     }
                     break;
                 }
