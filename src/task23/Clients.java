@@ -22,7 +22,7 @@ public class Clients {
 
 
         if(smart1.hashCode()==smart1.hashCode()) {
-            System.out.println("This user: " + smart1.login + " same as " + smart5.login);
+            System.out.println("This user: " + smart1.login + " same as " + smart1.login);
         }
         else System.out.println("This user: " + smart1.login + " not same as  " + smart5.login);
         System.out.println("Hash of this user " + smart1.login +  ": " + smart1.hashCode());
