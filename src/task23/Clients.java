@@ -26,7 +26,7 @@ public class Clients {
         }
         else System.out.println("This user: " + smart1.login + " not same as  " + smart5.login);
         System.out.println("Hash of this user " + smart1.login +  ": " + smart1.hashCode());
-        System.out.println("Hash of this user " + smart5.login + ": " + smart5.hashCode());
+        System.out.println("Hash of this user " + smart1.login + ": " + smart1.hashCode());
         System.out.println("");
         if(smart1.hashCode()==smart2.hashCode()) {
             System.out.println("User " + smart1.login + " same as " + smart2.login);
@@ -47,7 +47,13 @@ public class Clients {
         }
         else System.out.println("User " + smart1.login +  " not same as " + smart4.login);
         System.out.println("User hash " + smart1.login + ": " + smart1.hashCode());
-        System.out.println("User hash " + smart5.login + ": " + smart4.hashCode());
+        System.out.println("User hash " + smart4.login + ": " + smart4.hashCode());
+        if(smart1.hashCode()==smart5.hashCode()) {
+            System.out.println("User " + smart1.login + " same as " + smart5.login);
+        }
+        else System.out.println("User " + smart1.login +  " not same as " + smart5.login);
+        System.out.println("User hash " + smart1.login + ": " + smart1.hashCode());
+        System.out.println("User hash " + smart5.login + ": " + smart5.hashCode());
 
 
     }
